@@ -51,6 +51,13 @@ const projects = [
     link: "https://github.com/tankvivek-code/react-portfolio",
     demo: "https://portfolio-iota-sage-zuwa85246e.vercel.app/",
   },
+  {
+    title: "Hydra",
+    description: "This is advanced css website...",
+    tech: ["Html", "CSS", "Bootstrap5"],
+    link: "https://github.com/tankvivek-code/Hydra",
+    demo: "https://tankvivek-code.github.io/Hydra/",
+  },
 ];
 
 const Projects = () => {
