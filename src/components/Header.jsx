@@ -5,17 +5,22 @@ const Header = ({ menu }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="text-xl font-bold text-blue-700">My Portfolio</div>
+          <Link
+            to="/"
+            className="text-xl font-bold text-blue-700 dark:text-white"
+          >
+            My Portfolio
+          </Link>
 
-          <nav className="hidden md:flex gap-6 items-center">
+          <nav className="hidden md:flex gap-8 items-center">
             {menu.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className="text-gray-700 hover:text-blue-600 font-medium transition"
+                className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200"
               >
                 {item.label}
               </Link>
@@ -25,7 +30,8 @@ const Header = ({ menu }) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 focus:outline-none"
+              aria-label="Toggle Menu"
+              className="text-gray-700 dark:text-gray-200 focus:outline-none"
             >
               <svg
                 className="h-6 w-6"
@@ -55,12 +61,12 @@ const Header = ({ menu }) => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2 bg-white shadow">
+        <div className="md:hidden px-4 pb-4 space-y-3 bg-white dark:bg-gray-800 shadow">
           {menu.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className="block text-gray-700 hover:text-blue-600 font-medium transition"
+              className="block text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
               onClick={() => setIsOpen(false)}
             >
               {item.label}
