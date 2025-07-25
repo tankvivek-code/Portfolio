@@ -22,7 +22,7 @@ const projects = [
   {
     title: "To-Do List - JavaScript",
     description:
-      "A simple and interactive To-Do list built with vanilla JavaScript. Supports task add, delete, and local storage saving.",
+      "A simple and interactive To-Do list built with JavaScript. Supports task add, delete, and local storage saving.",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/tankvivek-code/Todo_list",
     demo: "https://tankvivek-code.github.io/Todo_list/",
