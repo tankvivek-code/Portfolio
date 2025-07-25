@@ -116,11 +116,11 @@ const Contact = () => {
         )}
       </div>
 
+      {/* -------- Contact Form with mailto -------- */}
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          alert("✅ Thank you! Your message has been sent.");
-        }}
+        action="mailto:tankvivek65@gmail.com"
+        method="POST"
+        encType="text/plain"
         className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 sm:p-8 space-y-5"
         data-aos="fade-up"
         data-aos-delay="200"
@@ -128,18 +128,21 @@ const Contact = () => {
         <div className="flex flex-col sm:flex-row gap-4">
           <input
             type="text"
+            name="Name"
             placeholder="Your Name"
             required
             className="flex-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
           />
           <input
             type="email"
+            name="Email"
             placeholder="Your Email"
             required
             className="flex-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
           />
         </div>
         <textarea
+          name="Message"
           placeholder="Your Message"
           rows={4}
           required
@@ -154,6 +157,7 @@ const Contact = () => {
         </button>
       </form>
 
+      {/* Floating WhatsApp */}
       <a
         href="https://wa.me/9924846727"
         target="_blank"

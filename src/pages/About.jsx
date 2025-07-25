@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import profilePic from "../assets/profile.jpg";
+
+import profilePic from "../assets/profile.png";
 import htmlLogo from "../assets/html.png";
 import cssLogo from "../assets/css.png";
 import jsLogo from "../assets/js.png";
@@ -28,77 +29,114 @@ const tools = [
 const timelineData = [
   {
     title: "🎓 BCA - Atmiya University",
-    date: "2022 - Present",
+    date: "2023 - Present (Sem 5)",
     description:
-      "Pursuing core Computer Science. Strong foundation in frontend and logical thinking.",
+      "Pursuing core Computer Science and building a strong foundation in frontend and problem-solving.",
   },
   {
     title: "💻 Full Stack Training - CI Academy",
     date: "2025 - Present",
     description:
-      "Focused training in React, MongoDB, Node.js, Tailwind, and Git. Built live projects.",
+      "Learning real-world technologies: React, Node.js, MongoDB, Tailwind CSS, and Git. Built multiple full-stack projects.",
   },
   {
-    title: "🌟 Personal & Freelance Projects",
+    title: "🌟 Freelance & Personal Projects",
     date: "2025 - Present",
     description:
-      "Crafted real-world websites: portfolios, dashboards, and client projects with responsive design.",
+      "Developed client websites and personal portfolios. Specialized in responsive design, clean UI/UX, and fast performance.",
   },
 ];
 
 const About = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
   return (
-    <section id="about" className="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 py-20 px-6">
+    <section
+      id="about"
+      className="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 py-20 px-6 overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-blue-700 dark:text-white mb-16" data-aos="fade-down">
+        {/* Header */}
+        <h1
+          className="text-4xl sm:text-5xl font-extrabold text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4"
+          data-aos="fade-down"
+        >
           👋 Meet Vivek
-        </h2>
+        </h1>
+        <p
+          className="text-lg sm:text-xl text-center text-gray-700 dark:text-gray-300 mb-12"
+          data-aos="fade-up"
+        >
+          Full Stack Developer • BCA (Sem 5) • Passionate Learner
+        </p>
 
+        {/* Profile + Skills */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div data-aos="fade-right" className="text-gray-800 dark:text-gray-200">
+          {/* Left - Bio */}
+          <div
+            data-aos="fade-right"
+            className="text-gray-800 dark:text-gray-200"
+          >
             <img
               src={profilePic}
-              alt="Profile"
-              className="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-500 shadow-lg mb-6 hover:scale-105 transition"
+              alt="Vivek Tank"
+              className="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-500 shadow-xl mb-6 hover:scale-105 transition"
             />
             <p className="text-lg text-center leading-relaxed px-4">
-              Hello! I'm <strong>Vivek</strong>, a dedicated <span className="text-blue-700 dark:text-blue-400">BCA student</span> at <strong>Atmiya University</strong>.
-              <br />
-              I'm passionate about <span className="font-medium">front-end design</span>, crafting smooth, responsive UI, and exploring full-stack development at{" "}
-              <strong>Creative Insight Academy</strong>.
+              Hello! I’m <strong>Vivek Tank</strong>, a passionate{" "}
+              <span className="text-blue-700 dark:text-blue-400">
+                BCA student
+              </span>{" "}
+              at <strong>Atmiya University</strong> and a full-stack developer
+              in training. I love designing clean UI, building responsive web
+              apps, and solving real-world problems through code.
             </p>
-            <p className="text-sm text-center mt-4 text-gray-500 dark:text-gray-400">🚀 Let’s build beautiful web experiences together!</p>
+            <p className="text-sm text-center mt-4 text-gray-500 dark:text-gray-400">
+              🚀 Let's innovate and create impactful web experiences!
+            </p>
           </div>
 
-          <div data-aos="fade-left" className="space-y-6">
-            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 transition hover:shadow-2xl">
-              <h3 className="text-xl font-semibold text-blue-600 mb-2">💼 Experience</h3>
-              <p className="text-gray-700 dark:text-gray-300">
-                Over <strong>6 months</strong> of hands-on learning, creating <span className="text-blue-600 font-medium">real-world projects</span>, and mastering modern frontend technologies.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 transition hover:shadow-2xl">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">🧠 Tech Stack</h3>
+          {/* Right - Skills */}
+          <div data-aos="fade-left" className="space-y-8">
+            <div className="bg-white dark:bg-gray-800 shadow-xl rounded-xl p-6 hover:shadow-2xl transition">
+              <h3 className="text-xl font-semibold text-blue-600 mb-3">
+                🧠 Tech Stack
+              </h3>
               <div className="flex flex-wrap gap-3">
                 {techStack.map((skill, i) => (
-                  <div key={i} className="flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full hover:scale-105 transition">
-                    <img src={skill.icon} alt={skill.label} className="w-5 h-5" />
-                    <span className="text-sm font-medium text-blue-700 dark:text-blue-100">{skill.label}</span>
+                  <div
+                    key={i}
+                    className="flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full hover:scale-105 transition"
+                  >
+                    <img
+                      src={skill.icon}
+                      alt={skill.label}
+                      className="w-5 h-5"
+                    />
+                    <span className="text-sm font-medium text-blue-700 dark:text-blue-100">
+                      {skill.label}
+                    </span>
                   </div>
                 ))}
               </div>
+            </div>
 
-              <h3 className="text-xl font-semibold text-blue-600 mt-6 mb-2">🛠 Tools</h3>
+            <div className="bg-white dark:bg-gray-800 shadow-xl rounded-xl p-6 hover:shadow-2xl transition">
+              <h3 className="text-xl font-semibold text-purple-600 mb-3">
+                🛠 Tools I Use
+              </h3>
               <div className="flex flex-wrap gap-3">
                 {tools.map((tool, i) => (
-                  <div key={i} className="flex items-center gap-2 px-3 py-1 bg-purple-100 dark:bg-purple-900 rounded-full hover:scale-105 transition">
+                  <div
+                    key={i}
+                    className="flex items-center gap-2 px-3 py-1 bg-purple-100 dark:bg-purple-900 rounded-full hover:scale-105 transition"
+                  >
                     <img src={tool.icon} alt={tool.label} className="w-5 h-5" />
-                    <span className="text-sm font-medium text-purple-700 dark:text-purple-100">{tool.label}</span>
+                    <span className="text-sm font-medium text-purple-700 dark:text-purple-100">
+                      {tool.label}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -106,17 +144,43 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-20" data-aos="fade-up">
-          <h3 className="text-3xl font-bold text-center text-blue-700 dark:text-white mb-10">📘 My Journey</h3>
-          <div className="relative border-l-4 border-blue-600 pl-6 ml-2 space-y-10">
-            {timelineData.map((item, index) => (
-              <div key={index} className="relative bg-white dark:bg-gray-800 shadow-md rounded-xl p-5">
-                <span className="absolute -left-3 top-2 w-5 h-5 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900"></span>
-                <h4 className="text-xl font-semibold text-blue-700 mb-1">{item.title}</h4>
-                <span className="text-sm text-gray-500 dark:text-gray-400">{item.date}</span>
-                <p className="text-gray-700 dark:text-gray-300 mt-2">{item.description}</p>
-              </div>
-            ))}
+        {/* Timeline Section */}
+        {/* Learning Journey Section */}
+        <div className="mt-16" data-aos="fade-up">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-blue-600">
+            📘 My Learning Journey
+          </h2>
+
+          <div className="space-y-6 text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            <div
+              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-l-4 border-blue-500"
+              data-aos="fade-right"
+            >
+              <h3 className="text-xl font-semibold text-blue-600">
+                🎓 Shubham School
+              </h3>
+              <p>12th Passed (Science Stream) – April 2023</p>
+            </div>
+
+            <div
+              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-l-4 border-purple-500"
+              data-aos="fade-left"
+            >
+              <h3 className="text-xl font-semibold text-purple-600">
+                💻 Atmiya University
+              </h3>
+              <p>BCA (Semester 5) – Currently Pursuing</p>
+            </div>
+
+            <div
+              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-l-4 border-green-500"
+              data-aos="fade-right"
+            >
+              <h3 className="text-xl font-semibold text-green-600">
+                🚀 Creative Insight IT Academy
+              </h3>
+              <p>Learning Full Stack Web Development – React, Tailwind, JS</p>
+            </div>
           </div>
         </div>
       </div>
