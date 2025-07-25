@@ -20,6 +20,14 @@ const projects = [
     demo: "https://tankvivek-code.github.io/dwello/",
   },
   {
+    title: "Bootstrap 5 Website",
+    description:
+      "My first responsive web project built using Bootstrap 5. It includes all pages with clean layout and mobile-friendly design.",
+    tech: ["HTML", "CSS", "Bootstrap 5"],
+    link: "https://github.com/tankvivek-code/Furniro",
+    demo: "https://tankvivek-code.github.io/Furniro/",
+  },
+  {
     title: "To-Do List - JavaScript",
     description:
       "A simple and interactive To-Do list built with JavaScript. Supports task add, delete, and local storage saving.",
