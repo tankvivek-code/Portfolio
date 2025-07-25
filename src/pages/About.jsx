@@ -153,7 +153,7 @@ const About = () => {
               <h3 className="text-xl font-semibold text-blue-600">
                 🎓 Shubham School
               </h3>
-              <p>12th Passed (Science Stream) – April 2023</p>
+              <p>12th Passed (commerce Stream) – April 2023</p>
             </div>
 
             <div
