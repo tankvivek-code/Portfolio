@@ -47,7 +47,7 @@ const Home = () => {
         </PrimaryButton>
         <PrimaryButton
           to="/about"
-          className="!bg-green-600 !text-white hover:!bg-green-500 border border-blue-400 text-lg px-6 py-3"
+          className="!bg-green-600 !text-white hover:!bg-green-500 border-0  text-lg px-6 py-3"
         >
           📖 Learn More About Me
         </PrimaryButton>
