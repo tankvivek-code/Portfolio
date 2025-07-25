@@ -11,13 +11,16 @@ import gitLogo from "../assets/git.png";
 import githubLogo from "../assets/github.png";
 import bootstrapLogo from "../assets/bootstrap.png";
 
-const skills = [
+const techStack = [
   { icon: htmlLogo, label: "HTML" },
   { icon: cssLogo, label: "CSS" },
   { icon: jsLogo, label: "JavaScript" },
   { icon: reactLogo, label: "React" },
   { icon: tailwindLogo, label: "Tailwind" },
   { icon: bootstrapLogo, label: "Bootstrap" },
+];
+
+const tools = [
   { icon: gitLogo, label: "Git" },
   { icon: githubLogo, label: "GitHub" },
 ];
@@ -25,21 +28,21 @@ const skills = [
 const timelineData = [
   {
     title: "🎓 BCA - Atmiya University",
-    date: "2022 - Present (Semester 5)",
+    date: "2022 - Present",
     description:
-      "Currently pursuing core computer science with hands-on web dev practice.",
+      "Pursuing core Computer Science. Strong foundation in frontend and logical thinking.",
   },
   {
-    title: "🧠 Full Stack Training - Creative Insight IT Academy",
+    title: "💻 Full Stack Training - CI Academy",
     date: "2025 - Present",
     description:
-      "Learning React, Node, Tailwind, MongoDB, and building live full-stack projects.",
+      "Focused training in React, MongoDB, Node.js, Tailwind, and Git. Built live projects.",
   },
   {
-    title: "🌱 Freelance & Personal Projects",
+    title: "🌟 Personal & Freelance Projects",
     date: "2025 - Present",
     description:
-      "Developed portfolio websites, student portals, dashboards, and small business landing pages.",
+      "Crafted real-world websites: portfolios, dashboards, and client projects with responsive design.",
   },
 ];
 
@@ -49,66 +52,53 @@ const About = () => {
   }, []);
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 py-20 px-6" id="about">
-      <div className="max-w-7xl mx-auto">
-        <h2
-          className="text-4xl font-bold text-center text-blue-700 mb-12"
-          data-aos="fade-down"
-        >
-          👋 About Me
+    <section id="about" className="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 py-20 px-6">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-blue-700 dark:text-white mb-16" data-aos="fade-down">
+          👋 Meet Vivek
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div
-            className="text-gray-800 dark:text-gray-200"
-            data-aos="fade-right"
-          >
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right" className="text-gray-800 dark:text-gray-200">
             <img
               src={profilePic}
-              alt="My Profile"
-              className="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-500 shadow-md mb-6"
+              alt="Profile"
+              className="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-500 shadow-lg mb-6 hover:scale-105 transition"
             />
-            <p className="text-lg mb-4 text-center">
-              Hi, I'm <span className="font-semibold">Vivek</span>, a BCA (Sem
-              5) student at{" "}
-              <span className="font-semibold">Atmiya University</span>. I'm
-              passionate about front-end development and currently learning
-              full-stack development at{" "}
-              <strong>Creative Insight IT Academy</strong>.
+            <p className="text-lg text-center leading-relaxed px-4">
+              Hello! I'm <strong>Vivek</strong>, a dedicated <span className="text-blue-700 dark:text-blue-400">BCA student</span> at <strong>Atmiya University</strong>.
+              <br />
+              I'm passionate about <span className="font-medium">front-end design</span>, crafting smooth, responsive UI, and exploring full-stack development at{" "}
+              <strong>Creative Insight Academy</strong>.
             </p>
-            <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-              🚀 I build responsive, clean, and user-friendly web apps.
-            </p>
+            <p className="text-sm text-center mt-4 text-gray-500 dark:text-gray-400">🚀 Let’s build beautiful web experiences together!</p>
           </div>
 
-          <div className="space-y-6" data-aos="fade-left">
-            <div className="bg-white dark:bg-gray-800 shadow-xl p-6 rounded-xl hover:shadow-2xl transition">
-              <h3 className="text-xl font-bold text-blue-600 mb-2">
-                📅 Experience
-              </h3>
+          <div data-aos="fade-left" className="space-y-6">
+            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 transition hover:shadow-2xl">
+              <h3 className="text-xl font-semibold text-blue-600 mb-2">💼 Experience</h3>
               <p className="text-gray-700 dark:text-gray-300">
-                <strong>6+ months</strong> of continuous practice, building
-                real-world projects, responsive layouts, and reusable components
-                using HTML, CSS, JavaScript, and React.
+                Over <strong>6 months</strong> of hands-on learning, creating <span className="text-blue-600 font-medium">real-world projects</span>, and mastering modern frontend technologies.
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 shadow-xl p-6 rounded-xl hover:shadow-2xl transition">
-              <h3 className="text-xl font-bold text-blue-600 mb-4">🛠 Skills</h3>
-              <div className="flex flex-wrap gap-4">
-                {skills.map((skill, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900 rounded-full hover:scale-105 transition-transform"
-                  >
-                    <img
-                      src={skill.icon}
-                      alt={skill.label}
-                      className="w-5 h-5"
-                    />
-                    <span className="text-sm font-medium text-blue-700 dark:text-blue-100">
-                      {skill.label}
-                    </span>
+            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 transition hover:shadow-2xl">
+              <h3 className="text-xl font-semibold text-blue-600 mb-4">🧠 Tech Stack</h3>
+              <div className="flex flex-wrap gap-3">
+                {techStack.map((skill, i) => (
+                  <div key={i} className="flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full hover:scale-105 transition">
+                    <img src={skill.icon} alt={skill.label} className="w-5 h-5" />
+                    <span className="text-sm font-medium text-blue-700 dark:text-blue-100">{skill.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <h3 className="text-xl font-semibold text-blue-600 mt-6 mb-2">🛠 Tools</h3>
+              <div className="flex flex-wrap gap-3">
+                {tools.map((tool, i) => (
+                  <div key={i} className="flex items-center gap-2 px-3 py-1 bg-purple-100 dark:bg-purple-900 rounded-full hover:scale-105 transition">
+                    <img src={tool.icon} alt={tool.label} className="w-5 h-5" />
+                    <span className="text-sm font-medium text-purple-700 dark:text-purple-100">{tool.label}</span>
                   </div>
                 ))}
               </div>
@@ -116,30 +106,17 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-16" data-aos="fade-up">
-          <h3 className="text-3xl font-bold text-blue-600 mb-10 text-center">
-            📘 Journey
-          </h3>
-          <div className="relative">
-            <div className="absolute left-2.5 top-0 w-1 h-full bg-blue-500 rounded-full hidden md:block"></div>
-            <ul className="space-y-10 pl-0 md:pl-10">
-              {timelineData.map((item, index) => (
-                <li key={index} className="relative">
-                  <div className="md:absolute left-0 top-1.5 w-5 h-5 bg-blue-600 border-2 border-white dark:border-gray-900 rounded-full z-10 hidden md:block"></div>
-                  <div className="bg-white dark:bg-gray-800 shadow-md rounded-xl p-5">
-                    <h4 className="text-xl font-semibold text-blue-700 mb-1">
-                      {item.title}
-                    </h4>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {item.date}
-                    </span>
-                    <p className="text-gray-700 dark:text-gray-300 mt-2">
-                      {item.description}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+        <div className="mt-20" data-aos="fade-up">
+          <h3 className="text-3xl font-bold text-center text-blue-700 dark:text-white mb-10">📘 My Journey</h3>
+          <div className="relative border-l-4 border-blue-600 pl-6 ml-2 space-y-10">
+            {timelineData.map((item, index) => (
+              <div key={index} className="relative bg-white dark:bg-gray-800 shadow-md rounded-xl p-5">
+                <span className="absolute -left-3 top-2 w-5 h-5 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900"></span>
+                <h4 className="text-xl font-semibold text-blue-700 mb-1">{item.title}</h4>
+                <span className="text-sm text-gray-500 dark:text-gray-400">{item.date}</span>
+                <p className="text-gray-700 dark:text-gray-300 mt-2">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

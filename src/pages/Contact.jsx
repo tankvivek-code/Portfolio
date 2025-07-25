@@ -19,89 +19,90 @@ const Contact = () => {
   }, []);
 
   return (
-    <section className="max-w-4xl mx-auto px-6 py-16 relative">
+    <section className="max-w-5xl mx-auto px-6 py-20 relative overflow-hidden">
       <h1
-        className="text-4xl font-bold text-center text-blue-700 mb-8"
+        className="text-4xl sm:text-5xl font-extrabold text-center bg-gradient-to-r from-blue-600 to-purple-500 text-transparent bg-clip-text mb-8"
         data-aos="fade-down"
       >
-        📬 Contact Me
+        📬 Let’s Connect
       </h1>
 
-      <p className="text-lg text-center text-gray-700 mb-2" data-aos="fade-up">
-        I'm currently pursuing <strong>BCA (Sem 5)</strong> at{" "}
-        <strong>Atmiya University</strong> and learning Full Stack Development
-        at <strong>Creative Insight IT Academic</strong>.
+      <p
+        className="text-lg text-center text-gray-700 dark:text-gray-300 mb-2"
+        data-aos="fade-up"
+      >
+        I'm <strong>Vivek Tank</strong>, a passionate developer pursuing{" "}
+        <strong>BCA (Sem 5)</strong> at <strong>Atmiya University</strong> and
+        learning Full Stack Web Development at{" "}
+        <strong>Creative Insight IT Academic</strong>.
       </p>
 
       <p
-        className="text-lg text-center text-gray-700 mb-8"
+        className="text-lg text-center text-gray-700 dark:text-gray-300 mb-10"
         data-aos="fade-up"
-        data-aos-delay="200"
+        data-aos-delay="150"
       >
-        Open to <strong>freelance projects</strong>,{" "}
-        <strong>internships</strong>, and <strong>part-time work</strong>. Let’s
-        connect!
+        Open to <span className="font-semibold text-blue-600">freelancing</span>
+        , <span className="font-semibold text-purple-600">internships</span>,
+        and <span className="font-semibold text-pink-600">part-time roles</span>
+        . Reach out, let’s create something awesome!
       </p>
 
       <div
-        className="bg-gray-50 dark:bg-gray-900 rounded-lg shadow p-6 space-y-4 text-center mb-10"
+        className="bg-gradient-to-tr from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-xl shadow-lg p-6 sm:p-10 space-y-5 text-center mb-12"
         data-aos="zoom-in"
       >
-        <p className="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-200">
-          <Mail className="w-5 h-5" />
-          <a
-            href="mailto:tankvivek65@gmail.com"
-            className="text-blue-600 hover:underline"
+        {[
+          {
+            icon: <Mail className="w-5 h-5" />,
+            label: "tankvivek65@gmail.com",
+            href: "mailto:tankvivek65@gmail.com",
+          },
+          {
+            icon: <Github className="w-5 h-5" />,
+            label: "github.com/tankvivek-code",
+            href: "https://github.com/tankvivek-code",
+          },
+          {
+            icon: <Linkedin className="w-5 h-5" />,
+            label: "linkedin.com/in/vivek-tank",
+            href: "https://www.linkedin.com/in/vivek-tank-1548412a9/",
+          },
+          {
+            icon: <Phone className="w-5 h-5" />,
+            label: "+91 99248 *****",
+            href: "tel:+919924846727",
+          },
+          {
+            icon: <MessageCircle className="w-5 h-5" />,
+            label: "WhatsApp Me",
+            href: "https://wa.me/9924846727",
+            isQR: true,
+          },
+        ].map((item, i) => (
+          <p
+            key={i}
+            className="flex items-center justify-center gap-3 text-gray-800 dark:text-gray-200"
           >
-            tankvivek65@gmail.com
-          </a>
-        </p>
-
-        <p className="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-200">
-          <Github className="w-5 h-5" />
-          <a
-            href="https://github.com/tankvivek-code"
-            target="_blank"
-            className="text-blue-600 hover:underline"
-          >
-            github.com/tankvivek-code
-          </a>
-        </p>
-
-        <p className="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-200">
-          <Linkedin className="w-5 h-5" />
-          <a
-            href="https://www.linkedin.com/in/vivek-tank-1548412a9/"
-            target="_blank"
-            className="text-blue-600 hover:underline"
-          >
-            linkedin.com/in/vivek-tank
-          </a>
-        </p>
-
-        <p className="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-200">
-          <Phone className="w-5 h-5" />
-          <a href="tel:+919924846727" className="text-blue-600 hover:underline">
-            +91 99248 *****
-          </a>
-        </p>
-
-        <p className="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-200">
-          <MessageCircle className="w-5 h-5" />
-          <a
-            href="https://wa.me/9924846727"
-            target="_blank"
-            className="text-blue-600 hover:underline"
-          >
-            WhatsApp Me
-          </a>
-          <button
-            onClick={() => setShowQR(!showQR)}
-            className="ml-2 text-sm text-gray-500 underline hover:text-blue-600"
-          >
-            {showQR ? "Hide QR" : "Show QR"}
-          </button>
-        </p>
+            {item.icon}
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline transition-all"
+            >
+              {item.label}
+            </a>
+            {item.isQR && (
+              <button
+                onClick={() => setShowQR(!showQR)}
+                className="ml-2 text-sm underline text-gray-500 hover:text-blue-600"
+              >
+                {showQR ? "Hide QR" : "Show QR"}
+              </button>
+            )}
+          </p>
+        ))}
 
         {showQR && (
           <div className="mt-4 flex justify-center" data-aos="fade-in">
@@ -109,7 +110,7 @@ const Contact = () => {
               src={whatsappQR}
               loading="lazy"
               alt="WhatsApp QR"
-              className="w-40 h-40 border rounded"
+              className="w-40 h-40 border rounded shadow-md"
             />
           </div>
         )}
@@ -120,31 +121,33 @@ const Contact = () => {
           e.preventDefault();
           alert("✅ Thank you! Your message has been sent.");
         }}
-        className="bg-white dark:bg-gray-800 shadow rounded-lg p-6 space-y-4"
+        className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 sm:p-8 space-y-5"
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        <input
-          type="text"
-          placeholder="Your Name"
-          required
-          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          required
-          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-        />
+        <div className="flex flex-col sm:flex-row gap-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            required
+            className="flex-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            required
+            className="flex-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          />
+        </div>
         <textarea
           placeholder="Your Message"
           rows={4}
           required
-          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
         ></textarea>
         <button
           type="submit"
-          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 flex items-center gap-2"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded shadow-md hover:scale-105 transition-transform flex items-center gap-2"
         >
           <Send className="w-4 h-4" />
           Send Message
@@ -154,8 +157,9 @@ const Contact = () => {
       <a
         href="https://wa.me/9924846727"
         target="_blank"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition-all"
         data-aos="fade-left"
+        aria-label="Chat on WhatsApp"
       >
         <MessageCircle className="w-5 h-5" />
       </a>

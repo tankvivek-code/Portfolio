@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -7,7 +7,7 @@ const projects = [
     title: "Tic Tak Toe Game",
     description:
       "A fun multiplayer Tic Tak Toe game with timer and AI difficulty levels built using React.",
-    tech: ["Javascript", "Tailwind", "Html5"],
+    tech: ["JavaScript", "Tailwind", "HTML5"],
     link: "https://github.com/tankvivek-code/tic-tac-toe",
     demo: "https://tankvivek-code.github.io/tic-tac-toe/",
   },
@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Bootstrap 5 Website",
     description:
-      "My first responsive web project built using Bootstrap 5. It includes all pages with clean layout and mobile-friendly design.",
+      "A responsive Bootstrap 5 website with multi-page layout and mobile-first responsive styling.",
     tech: ["HTML", "CSS", "Bootstrap 5"],
     link: "https://github.com/tankvivek-code/Furniro",
     demo: "https://tankvivek-code.github.io/Furniro/",
@@ -61,8 +61,8 @@ const projects = [
   },
   {
     title: "Hydra",
-    description: "This is advanced css website...",
-    tech: ["Html", "CSS", "Bootstrap5"],
+    description: "Advanced CSS animated UI concept inspired by Figma mockup designs.",
+    tech: ["HTML", "CSS", "Bootstrap 5"],
     link: "https://github.com/tankvivek-code/Hydra",
     demo: "https://tankvivek-code.github.io/Hydra/",
   },
@@ -74,50 +74,56 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16" id="projects">
+    <section className="max-w-7xl mx-auto px-6 py-20" id="projects">
       <h1
-        className="text-3xl md:text-4xl font-bold text-blue-700 mb-12 text-center"
+        className="text-3xl md:text-5xl font-extrabold text-center text-blue-700 dark:text-blue-400 mb-16"
         data-aos="fade-down"
       >
         🚀 My Projects
       </h1>
 
-      <div className="grid gap-10 md:grid-cols-2">
+      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <div
             key={index}
-            data-aos="fade-up"
+            data-aos="zoom-in-up"
             data-aos-delay={index * 100}
-            className="bg-white dark:bg-gray-800 border rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6"
+            className="group relative bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-gray-200 dark:border-gray-700 shadow-xl rounded-xl p-6 transition-all duration-300 hover:scale-[1.02]"
           >
-            <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
-              {project.title}
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+              🔧 {project.title}
             </h2>
 
-            <p className="text-gray-600 dark:text-gray-300 mb-3">
+            <p className="text-gray-700 dark:text-gray-300 mb-4 min-h-[60px]">
               {project.description}
             </p>
 
-            <p className="text-sm text-gray-500 mb-4">
-              <strong>Tech:</strong> {project.tech.join(", ")}
-            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tech.map((tech, i) => (
+                <span
+                  key={i}
+                  className="bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-white px-2 py-1 rounded-full text-xs font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex gap-4">
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded font-medium transition dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
+                className="text-sm font-semibold inline-flex items-center gap-1 px-4 py-2 border border-gray-400 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition"
               >
                 🔗 GitHub
               </a>
-
               {project.demo && (
                 <a
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium transition"
+                  className="text-sm font-semibold inline-flex items-center gap-1 px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-blue-500/50 transition"
                 >
                   🚀 Live Demo
                 </a>
