@@ -10,12 +10,14 @@ import Contact from "./pages/Contact";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Resume from "./pages/Resume";
 
 const menu = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
   { path: "/projects", label: "Projects" },
   { path: "/contact", label: "Contact" },
+  { path: "/resume", label: "Resume" },
 ];
 
 function App() {
@@ -39,6 +41,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/resume" element={<Resume />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
